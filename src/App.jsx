@@ -76,7 +76,7 @@ export default function App() {
       // Save the instance so we can destroy it in cleanup (prevents double cursors
       // when React StrictMode mounts the component twice in development).
       _typedInstance = new window.Typed('.typed', {
-        strings: ['Web Developer', 'UI/UX Designer', 'Freelancer'],
+        strings: ['Full Stack Developer', 'MERN Stack Developer', 'Software Engineer'],
         typeSpeed: 60,
         backSpeed: 40,
         backDelay: 1200,
@@ -179,13 +179,13 @@ export default function App() {
             <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&w=300&h=300&q=100&dpr=2" alt="About" />
           </div>
           <div className="about-details">
-            <h3>Web Developer & Designer</h3>
-            <p>I have 3+ years of experience building responsive, modern websites and web apps. I love turning ideas into reality using code and design.</p>
+            <h3>Full Stack Web Developer</h3>
+            <p>I have 3+ years of experience building responsive, modern websites and web apps. I love turning ideas into reality using code.</p>
             <ul>
               <li><b>Frontend:</b> HTML, CSS, JavaScript, React</li>
-              <li><b>Backend:</b> Node.js, Express, MongoDB</li>
-              <li><b>Tools:</b> Git, Webpack, Figma</li>
-              <li><b>Experience:</b> Freelance, Remote Teams</li>
+              <li><b>Backend:</b> Node.js, Express, MongoDB, SQL</li>
+              <li><b>Tools:</b> Git, Docker, Postman, AWS</li>
+              <li><b>Experience:</b> Full Stack Development, API Integration</li>
               <li><b>Education:</b> B.Sc. in Computer Science</li>
             </ul>
           </div>
@@ -197,34 +197,34 @@ export default function App() {
 
         <div className="skills-list">
           <div className="skill-card">
-            <i className="bx bx-palette"></i>
-            <h3>Figma</h3>
-            <p>Crafting intuitive UI designs and prototypes</p>
+            <i className="bx bxl-javascript"></i>
+            <h3>MERN Stack</h3>
+            <p>Building full-stack applications with MongoDB, Express, React, Node.js</p>
           </div>
           <div className="skill-card">
-            <i className="bx bx-paint"></i>
-            <h3>Adobe XD</h3>
-            <p>Designing interactive and user-friendly interfaces</p>
+            <i className="bx bxl-nodejs"></i>
+            <h3>Backend Development</h3>
+            <p>Creating robust and scalable server-side logic</p>
           </div>
           <div className="skill-card">
-            <i className="bx bx-brush"></i>
-            <h3>Sketch</h3>
-            <p>Creating clean and modern design mockups</p>
+            <i className="bx bxl-react"></i>
+            <h3>Frontend Architecture</h3>
+            <p>Designing scalable and maintainable frontend systems</p>
           </div>
           <div className="skill-card">
-            <i className="bx bx-layer"></i>
-            <h3>InVision</h3>
-            <p>Building collaborative prototypes for teams</p>
+            <i className="bx bxl-mongodb"></i>
+            <h3>Database Management</h3>
+            <p>Modeling and managing data with SQL and NoSQL databases</p>
           </div>
           <div className="skill-card">
-            <i className="bx bx-layout"></i>
-            <h3>Wireframing</h3>
-            <p>Structuring layouts for optimal user experience</p>
+            <i className="bx bx-server"></i>
+            <h3>API Integration</h3>
+            <p>Connecting frontend to backend with RESTful and GraphQL APIs</p>
           </div>
           <div className="skill-card">
-            <i className="bx bx-search-alt"></i>
-            <h3>User Research</h3>
-            <p>Analyzing user needs for effective designs</p>
+            <i className="bx bxl-git"></i>
+            <h3>Version Control</h3>
+            <p>Managing code versions and collaboration with Git and GitHub</p>
           </div>
         </div>
       </section>
@@ -234,18 +234,18 @@ export default function App() {
         <div className="services-list">
           <div className="service-card">
             <i className="bx bx-code-alt"></i>
-            <h3>Web Development</h3>
-            <p>Building responsive and dynamic websites using modern technologies.</p>
+            <h3>Frontend Development</h3>
+            <p>Building responsive and dynamic user interfaces using React and modern CSS.</p>
           </div>
           <div className="service-card">
-            <i className="bx bx-paint"></i>
-            <h3>UI/UX Design</h3>
-            <p>Designing user-friendly and visually appealing interfaces.</p>
+            <i className="bx bx-server"></i>
+            <h3>Backend Development</h3>
+            <p>Developing secure and scalable server-side applications and APIs.</p>
           </div>
           <div className="service-card">
-            <i className="bx bx-mobile-alt"></i>
-            <h3>Mobile Friendly</h3>
-            <p>Ensuring your website looks great on all devices.</p>
+            <i className="bx bx-layer"></i>
+            <h3>Full Stack Solutions</h3>
+            <p>End-to-end web application development from concept to deployment.</p>
           </div>
         </div>
       </section>
@@ -255,20 +255,20 @@ export default function App() {
         <div className="portfolio-list">
           <div className="portfolio-card">
             <img src="https://images.pexels.com/photos/270557/pexels-photo-270557.jpeg?auto=compress&cs=tinysrgb&w=400&h=140&fit=crop&q=85" alt="Modern website design on laptop" />
-            <h4>Website Design</h4>
-            <p>A responsive website for a modern business.</p>
+            <h4>E-commerce Platform</h4>
+            <p>A full-stack e-commerce solution with payment integration.</p>
             <a href="#" className="project-link">View Project</a>
           </div>
           <div className="portfolio-card">
             <img src="https://images.pexels.com/photos/1092644/pexels-photo-1092644.jpeg?auto=compress&cs=tinysrgb&w=400&h=140&fit=crop&q=85" alt="Mobile app interface on smartphone" />
-            <h4>Mobile App</h4>
-            <p>User-friendly app interface design.</p>
+            <h4>Task Management App</h4>
+            <p>Real-time task management application with team collaboration.</p>
             <a href="#" className="project-link">View Project</a>
           </div>
           <div className="portfolio-card">
             <img src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=400&h=140&fit=crop&q=85" alt="Interactive web dashboard on screen" />
-            <h4>Web Dashboard</h4>
-            <p>Interactive dashboard for data analytics.</p>
+            <h4>Analytics Dashboard</h4>
+            <p>Data visualization dashboard for business intelligence.</p>
             <a href="#" className="project-link">View Project</a>
           </div>
         </div>
