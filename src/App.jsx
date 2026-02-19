@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './App.css';
+import heroImg from './assets/hero.jpg';
 
 export default function App() {
   useEffect(() => {
@@ -167,9 +168,12 @@ export default function App() {
           <p>I'm a passionate web developer crafting beautiful and functional websites. Let's work together!</p>
           <a href="#contact" className="btn">Contact Me</a>
         </div>
-        <div className="hero-img">
-          <img src="https://i.pinimg.com/736x/7b/ba/12/7bba12c7e07a5126de7ca1d0c175bdd1.jpg" alt="Male professional portrait with vibrant neon accents" />
-        </div>
+        <div
+          className="hero-img"
+          role="img"
+          aria-label="Hero portrait"
+          style={{ backgroundImage: `url(${heroImg})` }}
+        />
       </section>
 
       <section id="about">

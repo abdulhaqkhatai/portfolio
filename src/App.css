@@ -183,20 +183,15 @@ nav {
 }
 
 .hero-img {
-  flex: 1 1 260px;
-  min-width: 220px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 1;
-}
-
-.hero-img img {
-  width: 250px;
-  max-width: 100%;
+  flex: 1 1 320px;
+  min-width: 260px;
+  height: 320px;
   border-radius: 1.2em;
   box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3);
-  background: var(--secondary-bg);
+  background-color: var(--secondary-bg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
   image-rendering: auto;
 }
 
