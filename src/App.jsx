@@ -168,12 +168,9 @@ export default function App() {
           <p>I'm a passionate web developer crafting beautiful and functional websites. Let's work together!</p>
           <a href="#contact" className="btn">Contact Me</a>
         </div>
-        <div
-          className="hero-img"
-          role="img"
-          aria-label="Hero portrait"
-          style={{ backgroundImage: `url(${heroImg})` }}
-        />
+        <div className="hero-img">
+          <img src={heroImg} alt="Male professional portrait" />
+        </div>
       </section>
 
       <section id="about">
