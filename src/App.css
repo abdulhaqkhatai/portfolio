@@ -140,11 +140,11 @@ nav {
 .hero {
   max-width: 1100px;
   margin: 90px auto 0 auto;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 0.5rem 1.5rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 1rem;
   background: var(--card-bg);
   border-radius: var(--radius);
   box-shadow: 0 4px 32px rgba(139, 92, 246, 0.2);
@@ -189,12 +189,14 @@ nav {
   justify-content: center;
   align-items: center;
   opacity: 1;
+  margin-right: 0;
 }
 
 .hero-img img {
   width: 250px;
   max-width: 100%;
   height: auto;
+  display: block;
   border-radius: 1.2em;
   box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3);
   background: var(--secondary-bg);
