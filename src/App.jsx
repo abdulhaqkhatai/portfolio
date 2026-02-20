@@ -1,9 +1,15 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import heroImg from './assets/hero.jpg';
+import emailjs from '@emailjs/browser';
 
 export default function App() {
   useEffect(() => {
+    // Initialize EmailJS
+    emailjs.init({
+      publicKey: 'ohjcicKQnbyUA1tEh'
+    });
+
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.getElementById('nav-links');
     const first = document.getElementById('first');
@@ -103,19 +109,53 @@ export default function App() {
 
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-      contactForm.addEventListener('submit', function (e) {
+      contactForm.addEventListener('submit', async function (e) {
         e.preventDefault();
         const name = this.querySelector('input[name=\"name\"]').value.trim();
         const email = this.querySelector('input[name=\"email\"]').value.trim();
         const message = this.querySelector('textarea[name=\"message\"]').value.trim();
-        const to = 'abdulhaq@email.com';
-        const subject = 'Portfolio Inquiry';
-        const body = `From: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-        const mailtoUrl = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        window.open(mailtoUrl, '_blank');
         const fm = document.getElementById('form-message');
-        if (fm) fm.textContent = 'Your email client is opening with pre-filled details. Please click \"Send\" to complete.';
-        this.reset();
+
+        try {
+          // Send email using EmailJS
+          const response = await emailjs.send(
+            'service_0r0fe8b',
+            'template_8q2ob7c',
+            {
+              from_name: name,
+              from_email: email,
+              message: message,
+              to_email: 'abdulhaqkhatai763@gmail.com'
+            }
+          );
+          
+          if (response.status === 200) {
+            if (fm) {
+              fm.textContent = '✓ Message sent successfully! I\'ll get back to you soon.';
+              fm.style.color = '#4CAF50';
+            }
+            this.reset();
+          }
+        } catch (error) {
+          console.error('Error sending email:', error);
+          if (fm) {
+            fm.textContent = '✗ Error sending message. Please try again or email me directly.';
+            fm.style.color = '#f44336';
+          }
+        }
+      });
+    }
+
+    // Handle CV button - show message that it's not available
+    const cvBtn = document.querySelector('a[aria-label*="CV"]');
+    if (cvBtn) {
+      cvBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        alert('CV is currently not available. Please download my Resume instead.');
+      });
+      
+      cvBtn.addEventListener('mouseenter', function () {
+        this.title = 'CV not available - Download Resume instead';
       });
     }
 
@@ -181,13 +221,13 @@ export default function App() {
           </div>
           <div className="about-details">
             <h3>Full Stack Web Developer</h3>
-            <p>I have 3+ years of experience building responsive, modern websites and web apps. I love turning ideas into reality using code.</p>
+            <p>I have 2+ years of experience building responsive, modern websites and web apps. I love turning ideas into reality using code.</p>
             <ul>
               <li><b>Frontend:</b> HTML, CSS, JavaScript, React</li>
               <li><b>Backend:</b> Node.js, Express, MongoDB, SQL</li>
               <li><b>Tools:</b> Git, Docker, Postman, AWS</li>
               <li><b>Experience:</b> Full Stack Development, API Integration</li>
-              <li><b>Education:</b> B.Sc. in Computer Science</li>
+              <li><b>Education:</b> B.TECH in Computer Science</li>
             </ul>
           </div>
         </div>
@@ -244,7 +284,7 @@ export default function App() {
             <p>Developing secure and scalable server-side applications and APIs.</p>
           </div>
           <div className="service-card">
-            <i className="bx bx-layer"></i>
+            <i className="bx bx-layer"></i>khatai763@gmail.com">abdulhaqkhatai763@g
             <h3>Full Stack Solutions</h3>
             <p>End-to-end web application development from concept to deployment.</p>
           </div>
@@ -278,7 +318,7 @@ export default function App() {
       <section id="contact">
         <h2>Contact</h2>
         <div className="contact-info">
-          <p>Email: <a href="mailto:abdulhaq@email.com">abdulhaq@email.com</a></p>
+          <p>Email: <a href="mailto:abdulhaqkhatai763@gmail.com">abdulhaqkhatai763@gmail.com</a></p>
           <p>Location: Remote / Worldwide</p>
         </div>
         <div className="contact-content">
@@ -291,7 +331,7 @@ export default function App() {
           </form>
           <div className="download-buttons">
             <a href="/assets/resume.pdf" className="btn" download aria-label="Download my resume as a PDF" tabIndex="0" rel="noopener noreferrer">Download Resume</a>
-            <a href="/assets/cv.pdf" className="btn" download aria-label="Download my CV as a PDF" tabIndex="0" rel="noopener noreferrer">Download CV</a>
+            <a href="javascript:void(0)" className="btn" aria-label="Download my CV as a PDF (Currently unavailable)" tabIndex="0" rel="noopener noreferrer">Download CV</a>
           </div>
         </div>
       </section>
