@@ -149,25 +149,19 @@ export default function App() {
     // Handle CV button - show message that it's not available
     const cvBtn = document.querySelector('a[aria-label*="CV"]');
     if (cvBtn) {
+      cvBtn.title = 'CV not available - Download Resume instead';
+      
       cvBtn.addEventListener('click', function (e) {
         e.preventDefault();
         const msg = document.getElementById('cv-unavailable-msg');
         if (msg) {
-          msg.style.display = 'block';
+          msg.style.opacity = '1';
+          msg.style.pointerEvents = 'auto';
           setTimeout(() => {
-            msg.style.display = 'none';
-          }, 5000);
+            msg.style.opacity = '0';
+            msg.style.pointerEvents = 'none';
+          }, 4000);
         }
-      });
-      
-      cvBtn.addEventListener('mouseenter', function () {
-        const msg = document.getElementById('cv-unavailable-msg');
-        if (msg) msg.style.display = 'block';
-      });
-      
-      cvBtn.addEventListener('mouseleave', function () {
-        const msg = document.getElementById('cv-unavailable-msg');
-        if (msg) msg.style.display = 'none';
       });
     }
 
@@ -344,7 +338,7 @@ export default function App() {
           <div className="download-buttons">
             <a href="/resume.pdf" className="btn" download="resume.pdf" aria-label="Download my resume as a PDF" tabIndex="0" rel="noopener noreferrer">Download Resume</a>
             <a href="javascript:void(0)" className="btn" aria-label="Download my CV as a PDF" tabIndex="0" rel="noopener noreferrer">Download CV</a>
-            <div id="cv-unavailable-msg" style={{display: 'none', marginTop: '15px', padding: '12px', backgroundColor: '#fff3cd', border: '1px solid #ffc107', borderRadius: '4px', color: '#856404', textAlign: 'center'}}>
+            <div id="cv-unavailable-msg" style={{opacity: '0', pointerEvents: 'none', transition: 'opacity 0.3s ease', marginTop: '15px', padding: '12px', backgroundColor: '#fff3cd', border: '1px solid #ffc107', borderRadius: '4px', color: '#856404', textAlign: 'center', fontSize: '14px'}}>
               ⚠️ CV is currently not available. Please download my Resume instead.
             </div>
           </div>
