@@ -296,7 +296,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="testimonials">
+      {/* <section id="testimonials">
         <h2>Testimonials</h2>
         <div className="testimonials-grid">
           <div className="card">
@@ -335,7 +335,7 @@ export default function App() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section id="social">
         <div className="social-list">
