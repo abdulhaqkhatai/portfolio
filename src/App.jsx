@@ -290,7 +290,7 @@ export default function App() {
             <p>Developing secure and scalable server-side applications and APIs.</p>
           </div>
           <div className="service-card">
-            <i className="bx bx-layer"></i>khatai763@gmail.com">abdulhaqkhatai763@g
+            <i className="bx bx-layer"></i>
             <h3>Full Stack Solutions</h3>
             <p>End-to-end web application development from concept to deployment.</p>
           </div>
