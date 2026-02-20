@@ -342,7 +342,7 @@ export default function App() {
             <div id="form-message"></div>
           </form>
           <div className="download-buttons">
-            <a href="/resume.pdf" className="btn" download aria-label="Download my resume as a PDF" tabIndex="0" rel="noopener noreferrer">Download Resume</a>
+            <a href="/resume.pdf" className="btn" download="resume.pdf" aria-label="Download my resume as a PDF" tabIndex="0" rel="noopener noreferrer">Download Resume</a>
             <a href="javascript:void(0)" className="btn" aria-label="Download my CV as a PDF" tabIndex="0" rel="noopener noreferrer">Download CV</a>
             <div id="cv-unavailable-msg" style={{display: 'none', marginTop: '15px', padding: '12px', backgroundColor: '#fff3cd', border: '1px solid #ffc107', borderRadius: '4px', color: '#856404', textAlign: 'center'}}>
               ⚠️ CV is currently not available. Please download my Resume instead.
