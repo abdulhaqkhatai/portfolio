@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import heroImg from './assets/hero.jpg';
+
+import pocketclass from './assets/pocketclass.png';
+
 import emailjs from '@emailjs/browser';
 
 export default function App() {
@@ -116,18 +119,34 @@ export default function App() {
         const message = this.querySelector('textarea[name=\"message\"]').value.trim();
         const fm = document.getElementById('form-message');
 
+        if (fm) {
+          fm.textContent = '⏳ Sending your message...';
+          fm.style.color = '#ff9800';
+        }
+
         try {
           // Send email using EmailJS
+          console.log('Attempting to send email with:', {
+            service_id: 'service_8qvvu2k',
+            template_id: 'template_9c5fevh',
+            name: name,
+            email: email,
+            message: message,
+            time: new Date().toLocaleString()
+          });
+
           const response = await emailjs.send(
-            'service_0r0fe8b',
-            'template_8q2ob7c',
+            'service_8qvvu2k',
+            'template_9c5fevh',
             {
-              from_name: name,
-              from_email: email,
+              name: name,
+              email: email,
               message: message,
-              to_email: 'abdulhaqkhatai763@gmail.com'
+              time: new Date().toLocaleString()
             }
           );
+          
+          console.log('Email send response:', response);
           
           if (response.status === 200) {
             if (fm) {
@@ -138,8 +157,13 @@ export default function App() {
           }
         } catch (error) {
           console.error('Error sending email:', error);
+          console.error('Error details:', {
+            message: error.message,
+            status: error.status,
+            text: error.text
+          });
           if (fm) {
-            fm.textContent = '✗ Error sending message. Please try again or email me directly.';
+            fm.textContent = '✗ Error: ' + (error.text || error.message || 'Check console for details');
             fm.style.color = '#f44336';
           }
         }
@@ -190,13 +214,13 @@ export default function App() {
     <>
       <header id="header">
         <nav>
-          <div className="logo">MyPortfolio</div>
+          <div className="logo">Abdul Haq</div>
           <ul className="nav-links" id="nav-links">
             <li><a href="#home" className="active">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#portfolio">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
           <div className="menu-toggle" id="menu-toggle" aria-label="Toggle menu" role="button" tabIndex="0">
@@ -298,26 +322,26 @@ export default function App() {
       </section>
 
       <section id="portfolio">
-        <h2>Portfolio</h2>
+        <h2>project</h2>
         <div className="portfolio-list">
           <div className="portfolio-card">
-            <img src="https://images.pexels.com/photos/270557/pexels-photo-270557.jpeg?auto=compress&cs=tinysrgb&w=400&h=140&fit=crop&q=85" alt="Modern website design on laptop" />
-            <h4>E-commerce Platform</h4>
-            <p>A full-stack e-commerce solution with payment integration.</p>
-            <a href="#" className="project-link">View Project</a>
+            <img src={pocketclass} />
+            <h4>Class Management System</h4>
+            <p>A full-stack multi tenate Class Management System to analys student marks</p>
+            <a href="https://myownclass.vercel.app/" className="project-link">View Project</a>
           </div>
           <div className="portfolio-card">
             <img src="https://images.pexels.com/photos/1092644/pexels-photo-1092644.jpeg?auto=compress&cs=tinysrgb&w=400&h=140&fit=crop&q=85" alt="Mobile app interface on smartphone" />
-            <h4>Task Management App</h4>
+            <h4>Task Management Web App</h4>
             <p>Real-time task management application with team collaboration.</p>
-            <a href="#" className="project-link">View Project</a>
+            <a href="https://tasks-flooow.vercel.app" className="project-link">View Project</a>
           </div>
-          <div className="portfolio-card">
+          {/* <div className="portfolio-card">
             <img src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=400&h=140&fit=crop&q=85" alt="Interactive web dashboard on screen" />
             <h4>Analytics Dashboard</h4>
             <p>Data visualization dashboard for business intelligence.</p>
             <a href="#" className="project-link">View Project</a>
-          </div>
+          </div> */}
         </div>
       </section>
 
