@@ -145,9 +145,9 @@ export default function App() {
               time: new Date().toLocaleString()
             }
           );
-          
+
           console.log('Email send response:', response);
-          
+
           if (response.status === 200) {
             if (fm) {
               fm.textContent = '✓ Message sent successfully! I\'ll get back to you soon.';
@@ -174,7 +174,7 @@ export default function App() {
     const cvBtn = document.querySelector('a[aria-label*="CV"]');
     if (cvBtn) {
       cvBtn.title = 'CV not available - Download Resume instead';
-      
+
       cvBtn.addEventListener('click', function (e) {
         e.preventDefault();
         const msg = document.getElementById('cv-unavailable-msg');
@@ -362,7 +362,7 @@ export default function App() {
           <div className="download-buttons">
             <a href="/resume.pdf" className="btn" download="resume.pdf" aria-label="Download my resume as a PDF" tabIndex="0" rel="noopener noreferrer">Download Resume</a>
             <a href="javascript:void(0)" className="btn" aria-label="Download my CV as a PDF" tabIndex="0" rel="noopener noreferrer">Download CV</a>
-            <div id="cv-unavailable-msg" style={{opacity: '0', pointerEvents: 'none', transition: 'opacity 0.3s ease', marginTop: '15px', padding: '12px', backgroundColor: '#fff3cd', border: '1px solid #ffc107', borderRadius: '4px', color: '#856404', textAlign: 'center', fontSize: '14px'}}>
+            <div id="cv-unavailable-msg" style={{ opacity: '0', pointerEvents: 'none', transition: 'opacity 0.3s ease', marginTop: '15px', padding: '12px', backgroundColor: '#fff3cd', border: '1px solid #ffc107', borderRadius: '4px', color: '#856404', textAlign: 'center', fontSize: '14px' }}>
               ⚠️ CV is currently not available. Please download my Resume instead.
             </div>
           </div>
@@ -412,25 +412,25 @@ export default function App() {
 
       <section id="social">
         <div className="social-list">
-          <a href="https://linkedin.com/in/yourprofile" className="social-card" aria-label="Visit my LinkedIn" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/abdul-haq-khatai-577261344/" className="social-card" aria-label="Visit my LinkedIn" target="_blank" rel="noopener noreferrer">
             <i className="bx bxl-linkedin"></i>
             <span className="social-tooltip">LinkedIn</span>
           </a>
-          <a href="https://instagram.com/yourprofile" className="social-card" aria-label="Visit my Instagram" target="_blank" rel="noopener noreferrer">
-            <i className="bx bxl-instagram"></i>
-            <span className="social-tooltip">Instagram</span>
+          <a href="https://wa.me/7732834515" className="social-card" aria-label="Contact me on WhatsApp" target="_blank" rel="noopener noreferrer">
+            <i className="bx bxl-whatsapp"></i>
+            <span className="social-tooltip">WhatsApp</span>
           </a>
-          <a href="https://facebook.com/yourprofile" className="social-card" aria-label="Visit my Facebook" target="_blank" rel="noopener noreferrer">
-            <i className="bx bxl-facebook"></i>
-            <span className="social-tooltip">Facebook</span>
+          <a href="https://t.me/abdhqq" className="social-card" aria-label="Contact me on Telegram" target="_blank" rel="noopener noreferrer">
+            <i className="bx bxl-telegram"></i>
+            <span className="social-tooltip">Telegram</span>
           </a>
-          <a href="https://github.com/yourprofile" className="social-card" aria-label="Visit my GitHub" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/abdulhaqkhatai" className="social-card" aria-label="Visit my GitHub" target="_blank" rel="noopener noreferrer">
             <i className="bx bxl-github"></i>
             <span className="social-tooltip">GitHub</span>
           </a>
-          <a href="https://x.com/yourprofile" className="social-card" aria-label="Visit my Twitter/X" target="_blank" rel="noopener noreferrer">
-            <i className="bx bxl-twitter"></i>
-            <span className="social-tooltip">Twitter/X</span>
+          <a href="mailto:abdulhaqkhatai763@gmail.com" className="social-card" aria-label="Send me an email" target="_blank" rel="noopener noreferrer">
+            <i className="bx bx-envelope"></i>
+            <span className="social-tooltip">Email</span>
           </a>
         </div>
       </section>
