@@ -428,7 +428,7 @@ export default function App() {
             <i className="bx bxl-github"></i>
             <span className="social-tooltip">GitHub</span>
           </a>
-          <a href="mailto:abdulhaqkhatai763@gmail.com" className="social-card" aria-label="Send me an email" target="_blank" rel="noopener noreferrer">
+          <a href="mailto:abdulhaqkhatai763@gmail.com" className="social-card" aria-label="Send me an email">
             <i className="bx bx-envelope"></i>
             <span className="social-tooltip">Email</span>
           </a>
