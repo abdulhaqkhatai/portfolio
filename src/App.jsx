@@ -189,12 +189,99 @@ export default function App() {
       });
     }
 
+    // Handle footer email icon - copy to clipboard
+    const emailIcon = document.querySelector('a.social-card[href*="mailto:"]');
+    if (emailIcon) {
+      emailIcon.addEventListener('click', function (e) {
+        e.preventDefault();
+        const email = 'abdulhaqkhatai763@gmail.com';
+        
+        navigator.clipboard.writeText(email).then(() => {
+          const tooltip = this.querySelector('.social-tooltip');
+          const originalText = tooltip.textContent;
+          
+          tooltip.textContent = '✓ Copied!';
+          tooltip.style.backgroundColor = '#4CAF50';
+          tooltip.style.color = 'white';
+          
+          setTimeout(() => {
+            tooltip.textContent = originalText;
+            tooltip.style.backgroundColor = '';
+            tooltip.style.color = '';
+          }, 2000);
+        });
+      });
+    }
+
     const backToTopBtn = document.querySelector('.back-to-top');
     if (backToTopBtn) {
       backToTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
+
+    // Protect hero image from being downloaded or opened in new tab
+    const heroImage = document.querySelector('.hero-img img');
+    if (heroImage) {
+      // Prevent right-click context menu
+      heroImage.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+        return false;
+      });
+
+      // Prevent drag and drop
+      heroImage.addEventListener('dragstart', (e) => {
+        e.preventDefault();
+        return false;
+      });
+
+      // Prevent opening in new tab
+      heroImage.addEventListener('mousedown', (e) => {
+        if (e.button === 1) { // Middle mouse button
+          e.preventDefault();
+          return false;
+        }
+      });
+
+      // Make image unselectable
+      heroImage.style.userSelect = 'none';
+      heroImage.style.webkitUserSelect = 'none';
+      
+      // Disable pointer events to prevent console access
+      heroImage.onload = function () {
+        this.style.pointerEvents = 'none';
+      };
+    }
+
+    // Prevent screenshots
+    document.addEventListener('keydown', (e) => {
+      // Prevent Print Screen
+      if (e.key === 'PrintScreen') {
+        e.preventDefault();
+        navigator.clipboard.writeText('');
+        return false;
+      }
+      // Prevent Shift + Print Screen
+      if (e.shiftKey && e.key === 'PrintScreen') {
+        e.preventDefault();
+        return false;
+      }
+      // Prevent Ctrl + Shift + S (screenshot tool)
+      if (e.ctrlKey && e.shiftKey && e.key === 's') {
+        e.preventDefault();
+        return false;
+      }
+      // Prevent Ctrl + Shift + C (inspect element)
+      if (e.ctrlKey && e.shiftKey && e.key === 'c') {
+        e.preventDefault();
+        return false;
+      }
+      // Prevent F12 (Developer Tools)
+      if (e.key === 'F12') {
+        e.preventDefault();
+        return false;
+      }
+    }, true);
 
     return () => {
       // Remove the scroll listener
