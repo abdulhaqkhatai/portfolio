@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import heroImg from './assets/hero.jpg';
-
+import aboutImg from './assets/aboutimage.png';
 import pocketclass from './assets/pocketclass.png';
 
 import emailjs from '@emailjs/browser';
@@ -334,7 +334,7 @@ export default function App() {
         <h2>About Me</h2>
         <div className="about-content">
           <div className="about-img">
-            <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&w=300&h=300&q=100&dpr=2" alt="About" />
+            <img src={aboutImg} alt="About" />
           </div>
           <div className="about-details">
             <h3>Full Stack Web Developer</h3>
