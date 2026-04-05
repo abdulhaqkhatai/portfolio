@@ -244,10 +244,10 @@ section h2 {
 }
 
 .about-img {
-  flex: 1 1 180px;
+  flex: 0 0 180px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .about-img img {
