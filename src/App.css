@@ -238,29 +238,32 @@ section h2 {
 
 .about-content {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   gap: 2rem;
-  align-items: flex-start;
 }
 
 .about-img {
-  flex: 1 1 180px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .about-img img {
-  width: 180px;
-  border-radius: 1em;
-  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.15);
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  box-shadow: 0 4px 24px rgba(139, 92, 246, 0.25);
   background: var(--secondary-bg);
   image-rendering: auto;
 }
 
 .about-details {
-  flex: 2 1 340px;
+  width: 100%;
   color: var(--text-primary);
+  text-align: center;
 }
 
 .about-details h3 {
