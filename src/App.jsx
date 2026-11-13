@@ -409,19 +409,19 @@ export default function App() {
       </section>
 
       <section id="portfolio">
-        <h2>project</h2>
+        <h2>Projects</h2>
         <div className="portfolio-list">
           <div className="portfolio-card">
-            <img src={pocketclass} />
-            <h4>Class Management System</h4>
-            <p>A full-stack multi tenate Class Management System to analys student marks</p>
-            <a href="https://myownclass.vercel.app/" className="project-link">View Project</a>
+            <img src={pocketclass} alt="Class Management System interface showing student marks and class analytics" />
+            <h3>Class Management System</h3>
+            <p>A full-stack multi-tenant Class Management System to analyze student marks. Built with React, Node.js, Express, and MongoDB for seamless classroom management.</p>
+            <a href="https://myownclass.vercel.app/" className="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
           </div>
           <div className="portfolio-card">
-            <img src="https://images.pexels.com/photos/1092644/pexels-photo-1092644.jpeg?auto=compress&cs=tinysrgb&w=400&h=140&fit=crop&q=85" alt="Mobile app interface on smartphone" />
-            <h4>Task Management Web App</h4>
-            <p>Real-time task management application with team collaboration.</p>
-            <a href="https://tasks-flooow.vercel.app" className="project-link">View Project</a>
+            <img src="https://images.pexels.com/photos/1092644/pexels-photo-1092644.jpeg?auto=compress&cs=tinysrgb&w=400&h=140&fit=crop&q=85" alt="Task Management Web App interface on smartphone showing task management and team collaboration features" />
+            <h3>Task Management Web App</h3>
+            <p>Real-time task management application with team collaboration features. Enables teams to track, assign, and manage tasks efficiently.</p>
+            <a href="https://tasks-flooow.vercel.app" className="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
           </div>
           {/* <div className="portfolio-card">
             <img src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=400&h=140&fit=crop&q=85" alt="Interactive web dashboard on screen" />
