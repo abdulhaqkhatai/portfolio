@@ -11,7 +11,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false, // Disable source maps in production for security
-    minify: 'terser', // Enable minification for smaller bundle
+    minify: 'esbuild', // Fast and built-in minification
     rollupOptions: {
       output: {
         manualChunks: undefined,
