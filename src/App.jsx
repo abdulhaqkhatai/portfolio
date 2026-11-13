@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import './App.css';
 import heroImg from './assets/hero.jpg';
 import aboutImg from './assets/aboutimage.png';
+import instantgif from './assets/instantgif.png';
 import pocketclass from './assets/pocketclass.png';
 
 import emailjs from '@emailjs/browser';
@@ -411,6 +412,12 @@ export default function App() {
       <section id="portfolio">
         <h2>Projects</h2>
         <div className="portfolio-list">
+          <div className="portfolio-card">
+            <img src={instantgif} alt="InstantGIF interface - Comment GIF and image saver with browser-based media tools" />
+            <h3>InstantGIF</h3>
+            <p>Live web tool to search, preview, and download GIFs and images from social media comments. Scaled to 3,250+ unique visitors and 49,000+ requests in its first month, deployed on Cloudflare.</p>
+            <a href="https://instantgif.com" className="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
+          </div>
           <div className="portfolio-card">
             <img src={pocketclass} alt="Class Management System interface showing student marks and class analytics" />
             <h3>Class Management System</h3>

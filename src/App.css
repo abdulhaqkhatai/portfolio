@@ -394,10 +394,11 @@ section h2 {
   image-rendering: auto;
 }
 
+.portfolio-card h3,
 .portfolio-card h4 {
   color: var(--accent);
   margin-bottom: 0.4em;
-  font-size: 1rem;
+  font-size: 1.05rem;
 }
 
 .project-link {
